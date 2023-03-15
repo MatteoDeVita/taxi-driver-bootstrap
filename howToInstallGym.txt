@@ -1,0 +1,12 @@
+sur windows :
+    - install this : error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
+    - Open and select tab Individual Components and install MSVC - v140 VS2015 C++ Build Tools (v14.00) and also and Windows 10 SDK, eg 10.0.20348.0
+    - Copy the file rc.exe & rcdll.dll from
+        C:\Program Files (x86)\Windows Kits\10\bin\10.0.20348.0\x64
+    to
+        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
+
+    solution from here : https://stackoverflow.com/questions/71470989/python-setup-py-bdist-wheel-did-not-run-successfully
+    
+pip install Cmake
+pip install gym[all]

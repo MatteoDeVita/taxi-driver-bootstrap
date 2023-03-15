@@ -1,0 +1,4 @@
+tuto gym : https://www.gymlibrary.dev/content/basic_usage/
+frozen lake : https://www.gymlibrary.dev/environments/toy_text/frozen_lake/#frozen-lake
+tuto frozen lake : https://www.youtube.com/watch?v=Vrro7W7iW2w
+pygame key mapping : https://www.pygame.org/docs/ref/key.html
