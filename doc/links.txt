@@ -2,3 +2,4 @@ tuto gym : https://www.gymlibrary.dev/content/basic_usage/
 frozen lake : https://www.gymlibrary.dev/environments/toy_text/frozen_lake/#frozen-lake
 tuto frozen lake : https://www.youtube.com/watch?v=Vrro7W7iW2w
 pygame key mapping : https://www.pygame.org/docs/ref/key.html
+tuto Q-LEARNING Frozen Lake : https://mlabonne.github.io/blog/reinforcement%20learning/q-learning/frozen%20lake/gym/tutorial/2022/02/13/Q_learning.html
