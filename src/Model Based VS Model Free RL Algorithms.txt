@@ -1,0 +1,23 @@
+In reinforcement learning, the terms "model-based" and "model-free" do NOT refer to the use of
+a neural network or other statistical model to predict values, or even to predict next state.
+
+Instead, the terms refers strictly as to wether, while during learning or acting, the agent uses
+precitions of the environment response. The agent can use a single prediciton from the model of
+next reward and next state (a sample), or it can ask the model for the expected next reward, or the 
+full distribution of next states and next rewards. These predicitons can be provided entirely outside
+of the learning agent. 
+Algo that purely sample from experience surch as Monte Carlo Control, SARSA, Q-Learning, Actor-Critic are
+"model-free" RL algos.
+
+IF THE AGENT CAN LEARN BY MAKING PREDICTIONS ABOUT CONSEQUENCES OF ITS ACTIONS, then it's "model-based".
+IF IT CAN ONLY LEARN THROUGH EXPERIENCE THEN IT IS "model-free".
+
+Algos may be "on policy" ->  where the total reward is estimated only using the policy
+or "off policy" -> when the total reward is estimated through several possible actions
+
+Policies define which actions to take. But it's important to keep exploring while learning to optimize
+the total reward. 
+The epsilon-greedy approach selects the action with the highest estimated reward most of the time.
+
+The game suggested to you being episodic, there are 2 possible ways of learning, waiting until the
+end of one game to update the policy, or updating it after each action reward step (called Temporal Difference Learning)
