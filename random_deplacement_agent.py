@@ -50,7 +50,7 @@ def run_episode(env, actions, render=False):
     # 3 - Actually playing the game with the given actions
     for i in range(len(actions)):
         state, reward, done, truncated, info = env.step(actions[i])
-        if done or i >= len(actions):
+        if done:
             break
     # 4 - Return the reward
     return reward
