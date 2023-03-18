@@ -5,6 +5,7 @@ from gym.envs.toy_text.frozen_lake import generate_random_map
 import numpy as np
 import pygame
 import time
+from tqdm.auto import tqdm
 
 mapped_keys = {
     (pygame.K_LEFT,): 0,
@@ -41,12 +42,10 @@ def get_random_actions(n):
     return np.random.randint(4, size=n) # Generate an array of 16 elements with int between 0 and 3 included
 
 # Run the episode and return the reward
-def run_episode(env, actions, render=False):
+def run_episode(env, actions):
     reward = 0
     # 1 - Reset env before running episode and getting the initial state
     initial_state = env.reset()
-    # 2 - Rendering the env to see what is happening if render == True
-    if render == True: env.render()
     # 3 - Actually playing the game with the given actions
     for i in range(len(actions)):
         state, reward, done, truncated, info = env.step(actions[i])
@@ -54,6 +53,12 @@ def run_episode(env, actions, render=False):
             break
     # 4 - Return the reward
     return reward
+
+def play(env, n_episode = 100):
+    n_win = 0
+    for _ in tqdm(range(n_episode)):
+        n_win = n_win + run_episode(env, get_random_actions(100))
+    print(f"Number of wins : {int(n_win)} over {n_episode} episodes.")
 
 
 # Create the env
@@ -65,12 +70,7 @@ env = gym.make(
 reward = 0
 n_game = 0
 start = time.time()
-while reward < 1:
-    random_actions = get_random_actions(100) #Pre generate random actions, the length of a frozen lake episode for 4*4 map is 100, 200 for 8*8 map
-    reward = run_episode(env, random_actions)
-    n_game = n_game + 1
-end = time.time()
+play(env, n_episode=50_000)
 env.close()
-print(f"Sucess in {n_game} episodes. Time taken = {end - start} seconds")
 
 
